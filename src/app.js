@@ -5,6 +5,8 @@ const path = require('path');
 const authRoutes = require('./routes/auth');
 const alunoRoutes = require('./routes/aluno');
 const professorRoutes = require('./routes/professor');
+const jogosRoutes = require('./routes/jogos');
+
 
 const app = express();
 
@@ -24,6 +26,7 @@ app.use(session({
 app.use('/', authRoutes);
 app.use('/', alunoRoutes);
 app.use('/', professorRoutes);
+app.use('/', jogosRoutes);
 
 app.use((err, req, res, next) => {
     console.error(err.stack);
